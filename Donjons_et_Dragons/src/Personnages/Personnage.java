@@ -1,0 +1,73 @@
+package Personnages;
+
+public class Personnage {
+    String name;
+    String type;
+    int pv;
+    int force;
+
+    ///////////// Getters et Setters ///////////
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getPv() {
+        return pv;
+    }
+
+    public void setPv(int pv) {
+        this.pv = pv;
+    }
+
+    public int getForce() {
+        return force;
+    }
+
+    public void setForce(int force) {
+        this.force = force;
+    }
+
+
+    ///////////// Getters et Setters ///////////
+
+    ///////////// Constructeur ///////////
+    public Personnage() {
+
+    }
+
+    public Personnage(String name) {
+        this.name = name;
+    }
+
+
+    public Personnage(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
+    ///////////// Constructeur ///////////
+
+    ///////////// méthode toString(), ///////////
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", pv=" + pv +
+                ", force=" + force +
+                '}';
+    }
+    ///////////// méthode toString(), ///////////
+}
