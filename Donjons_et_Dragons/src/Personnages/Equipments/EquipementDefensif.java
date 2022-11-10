@@ -1,9 +1,9 @@
-package Equipments;
+package Personnages.Equipments;
 
-public class EquipementOffensif {
+public class EquipementDefensif {
     String type;
     String name;
-    int LvlAtk;
+    int lvlDef;
 
     ///////////// Getters et Setters ///////////
     public String getType() {
@@ -22,19 +22,19 @@ public class EquipementOffensif {
         this.name = name;
     }
 
-    public int getLvlAtk() {
-        return LvlAtk;
+    public int getLvlDef() {
+        return lvlDef;
     }
 
-    public void setLvlAtk(int lvlAtk) {
-        LvlAtk = lvlAtk;
+    public void setLvlDef(int lvlDef) {
+        this.lvlDef = lvlDef;
     }
     ///////////// Getters et Setters ///////////
 
 
-    public EquipementOffensif(String type, String name, int lvlAtk) {
+    public EquipementDefensif(String type, String name, int lvlDef) {
         this.type = type;
         this.name = name;
-        LvlAtk = lvlAtk;
+        this.lvlDef = lvlDef;
     }
 }

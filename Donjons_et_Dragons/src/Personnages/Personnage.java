@@ -60,6 +60,7 @@ public class Personnage {
     ///////////// Constructeur ///////////
 
     ///////////// méthode toString(), ///////////
+
     @Override
     public String toString() {
         return "Personnage{" +
@@ -69,5 +70,6 @@ public class Personnage {
                 ", force=" + force +
                 '}';
     }
+
     ///////////// méthode toString(), ///////////
 }
