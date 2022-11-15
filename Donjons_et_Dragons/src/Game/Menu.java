@@ -23,15 +23,24 @@ public class Menu {
 
     public String creatPersoName(){
 
-            System.out.println("----------------------------------------------");
-            System.out.println("On vas crée un nouveaux personnage");
-            System.out.println("Comment souhaite tu appeler ton Hero");
+        System.out.println("----------------------------------------------");
+        System.out.println("On vas crée un nouveaux personnage");
+        System.out.println("Comment souhaite tu appeler ton Hero");
             return clavier.nextLine();
     }
 
     public String creatPersoRace(){
-        System.out.println("De quelle race souhaite etre");
+        System.out.println("----------------------------------------------");
+        System.out.println("De quelle race souhaite etre | Guerrier / Magicien ");
         return clavier.nextLine();
+    }
+
+    public String GoOrModif(){
+       String choix1 = clavier.nextLine();
+        System.out.println("----------------------------------------------");
+        System.out.println("Ton personage est pret a partir a l'aventure !");
+        System.out.println("1: C'est parti | 2: non je veux modifier mon personage | 3: laisse tomber j'ai trop peur");
+        return choix1;
     }
 
 }

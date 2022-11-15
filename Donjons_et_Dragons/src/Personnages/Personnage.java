@@ -57,6 +57,14 @@ public class Personnage {
         this.name = name;
         this.type = type;
     }
+
+    public Personnage(String name, String type, int pv, int force) {
+        this.name = name;
+        this.type = type;
+        this.pv = pv;
+        this.force = force;
+    }
+
     ///////////// Constructeur ///////////
 
     ///////////// méthode toString(), ///////////
