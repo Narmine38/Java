@@ -1,18 +1,20 @@
 package Personnages.Equipments;
 
 public class EquipementOffensif {
-    String type;
+
     String name;
+
+    String type;
     int LvlAtk;
 
-    ///////////// Getters et Setters ///////////
-    public String getType() {
-        return type;
+    public EquipementOffensif(String name, String type, int lvlAtk) {
+        this.name = name;
+        this.type = type;
+        LvlAtk = lvlAtk;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    ///////////// Getters et Setters ///////////
+
 
     public String getName() {
         return name;
@@ -22,6 +24,14 @@ public class EquipementOffensif {
         this.name = name;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public int getLvlAtk() {
         return LvlAtk;
     }
@@ -29,12 +39,13 @@ public class EquipementOffensif {
     public void setLvlAtk(int lvlAtk) {
         LvlAtk = lvlAtk;
     }
-    ///////////// Getters et Setters ///////////
 
-
-    public EquipementOffensif(String type, String name, int lvlAtk) {
-        this.type = type;
-        this.name = name;
-        LvlAtk = lvlAtk;
+    @Override
+    public String toString() {
+        return "EquipementOffensif{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", LvlAtk=" + LvlAtk +
+                '}';
     }
 }

@@ -5,7 +5,14 @@ public class EquipementDefensif {
     String name;
     int lvlDef;
 
+    public EquipementDefensif(String type, String name, int lvlDef) {
+        this.type = type;
+        this.name = name;
+        this.lvlDef = lvlDef;
+    }
+
     ///////////// Getters et Setters ///////////
+
     public String getType() {
         return type;
     }
@@ -29,12 +36,5 @@ public class EquipementDefensif {
     public void setLvlDef(int lvlDef) {
         this.lvlDef = lvlDef;
     }
-    ///////////// Getters et Setters ///////////
 
-
-    public EquipementDefensif(String type, String name, int lvlDef) {
-        this.type = type;
-        this.name = name;
-        this.lvlDef = lvlDef;
-    }
 }

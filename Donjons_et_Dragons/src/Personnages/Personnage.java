@@ -1,10 +1,10 @@
 package Personnages;
 
 public class Personnage {
-    String name;
-    String type;
-    int pv;
-    int force;
+    private String name;
+    private String type;
+    private int pv;
+    private int force;
 
     ///////////// Getters et Setters ///////////
 
