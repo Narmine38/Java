@@ -1,4 +1,4 @@
-package Personnages.Classe;
+package Personnages.Classe.Player;
 
 
 import Personnages.Equipments.StuffPerso.Armes;

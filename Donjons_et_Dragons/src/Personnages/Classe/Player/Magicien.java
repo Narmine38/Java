@@ -1,4 +1,4 @@
-package Personnages.Classe;
+package Personnages.Classe.Player;
 
 import Personnages.Equipments.StuffPerso.Philtre;
 import Personnages.Equipments.StuffPerso.Sorts;
@@ -13,7 +13,7 @@ public class Magicien extends Personnage {
         this.setPv(6);
         this.setForce(15);
         sort = new Sorts("gandalf","baton", 5);
-        philtre = new Philtre("potion", "petitePotin", 3);
+        philtre = new Philtre("potion", 3);
 
     }
 

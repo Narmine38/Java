@@ -1,10 +1,11 @@
 package Personnages;
 
-public class Personnage {
-    private String name;
+abstract public class Personnage {
+    protected String name;
     private String type;
-    private int pv;
-    private int force;
+    protected int pv;
+    protected int force;
+
 
     ///////////// Getters et Setters ///////////
 
@@ -65,6 +66,13 @@ public class Personnage {
         this.force = force;
     }
 
+    public Personnage(String name, int force, int pv) {
+        this.name = name;
+        this.force = force;
+        this.pv = pv;
+    }
+
+
     ///////////// Constructeur ///////////
 
     ///////////// méthode toString(), ///////////
@@ -77,6 +85,10 @@ public class Personnage {
                 ", pv=" + pv +
                 ", force=" + force +
                 '}';
+    }
+
+    public int getPos() {
+        return 0;
     }
 
     ///////////// méthode toString(), ///////////

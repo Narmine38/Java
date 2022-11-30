@@ -1,25 +1,18 @@
 package Personnages.Equipments;
 
-public class EquipementDefensif {
-    String type;
+    abstract public class EquipementDefensif {
+
     String name;
     int lvlDef;
 
-    public EquipementDefensif(String type, String name, int lvlDef) {
-        this.type = type;
+    public EquipementDefensif( String name, int lvlDef) {
         this.name = name;
         this.lvlDef = lvlDef;
     }
 
     ///////////// Getters et Setters ///////////
 
-    public String getType() {
-        return type;
-    }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public String getName() {
         return name;

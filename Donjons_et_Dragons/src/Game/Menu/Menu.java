@@ -1,4 +1,5 @@
-package Game;
+package Game.Menu;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -45,16 +46,35 @@ public class Menu {
         return choix;
     }
 
-    public String GoOrModif() {
+    public UserChoice GoOrModif() {
+        UserChoice choix;
         System.out.println("----------------------------------------------");
         System.out.println("Ton personage est pret a partir a l'aventure !");
-        System.out.println("1: C'est parti | 2: non je veux modifier mon personage | 3: laisse tomber j'ai trop peur");
-        return clavier.nextLine();
+        do {
+            System.out.println("1: C'est parti | 2: non je veux modifier mon personage | 3: laisse tomber j'ai trop peur");
+            choix = switch (clavier.nextLine()){
+                case "1" -> UserChoice.PLAY;
+                case "2" -> UserChoice.MODIF;
+                case "3" -> UserChoice.QUIT;
+                default -> UserChoice.WRONG_ANSWER;
+            };
+
+        }while (choix == UserChoice.WRONG_ANSWER);
+        return choix;
     }
 
-    public String OptionEnJeux() {
-        System.out.println("1. Lancer les dés| 2. info du personnage | 3. Quitter");
-        return clavier.nextLine();
+    public UserChoice OptionEnJeux() {
+        UserChoice choix;
+        do {
+            System.out.println("1: Lancer les dés| 2: info du personnage | 3: Quitter");
+            choix = switch (clavier.nextLine()){
+                case "1" -> UserChoice.PLAY;
+                case "2" -> UserChoice.INFO;
+                case "3" -> UserChoice.QUIT;
+                default -> UserChoice.WRONG_ANSWER;
+            };
+        }while (choix == UserChoice.WRONG_ANSWER);
+        return choix;
     }
 
 

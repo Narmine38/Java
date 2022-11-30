@@ -1,12 +1,13 @@
 package Personnages.Equipments.StuffPerso;
 
 import Game.Cases;
-import Personnages.Equipments.EquipementOffensif;
+import Personnages.Equipments.EquipementDefensif;
 import Personnages.Personnage;
 
-public class Armes extends EquipementOffensif implements Cases {
-    public Armes(String name, String type, int lvlAtk) {
-        super(name, type, lvlAtk);
+public class Potion extends EquipementDefensif implements Cases {
+
+    public Potion(String name, int lvlDef) {
+        super(name, lvlDef);
     }
 
     @Override
@@ -18,8 +19,7 @@ public class Armes extends EquipementOffensif implements Cases {
     public String toString() {
         return "Armes{" +
                 "name='" + getName() + '\'' +
-                ", type=" + getType() +
-                ", lvlAtk=" + getLvlAtk() +
+                ", lvlDef=" + getLvlDef() +
                 '}';
     }
 }

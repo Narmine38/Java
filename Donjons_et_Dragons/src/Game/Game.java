@@ -1,10 +1,12 @@
 package Game;
 
-import Personnages.Classe.Guerrier;
-import Personnages.Classe.Magicien;
+import Game.Board.Board;
+import Game.Exception.PersonnageHorsPlateauException;
+import Game.Menu.Menu;
+import Game.Menu.UserChoice;
+import Personnages.Classe.Player.Guerrier;
+import Personnages.Classe.Player.Magicien;
 import Personnages.Personnage;
-
-import java.util.Objects;
 
 public class Game {
 
@@ -13,58 +15,82 @@ public class Game {
     Personnage persoDuJoueur;
 
     public void fullGame() {
-        toto.demarrage();
-        persoDuJoueur = choosenHero();
+
+        if (toto.demarrage() == UserChoice.CONTINUE) {
+            persoDuJoueur = choosenHero();
+
+        } else {
+            System.out.println("GameOver");
+            System.exit(0);
+        }
         starGame();
     }
 
     private Personnage choosenHero() {
         String nom = toto.creatPersoName();
-        String type = String.valueOf(toto.creatPersoRace());
+        UserChoice choix = toto.creatPersoRace();
         Personnage persoDuJoueur = null;
-        if (Objects.equals(type, "1")) {
+
+        if (choix == UserChoice.GUERRIER) {
             persoDuJoueur = new Guerrier(nom);
             System.out.println(persoDuJoueur);
-        } else if (Objects.equals(type, "2")) {
+
+        } else if (choix == UserChoice.MAGICIEN) {
             persoDuJoueur = new Magicien(nom);
             System.out.println(persoDuJoueur);
-
         }
         return persoDuJoueur;
     }
 
-    private void starGame(){
-       String choice = toto.GoOrModif();
+    private void starGame() {
+        UserChoice choix = toto.GoOrModif();
 
-       if (Objects.equals(choice, "1")){
-           System.out.println("c'est partie !");
-           while (cece.getPlayerPosition() < cece.getTest().length){
-               partiLancer();
-           }
+        if (choix == UserChoice.PLAY) {
+            System.out.println("c'est partie !");
+            boolean playing = true;
+            while (playing) {
+                try {
+                    partiLancer();
+                } catch (PersonnageHorsPlateauException e) {
+                    System.out.println(e.getMessage());
+                    playing = false;
+                }
+            }
 
-       }else if (Objects.equals(choice, "2")){
-           choosenHero();
-           toto.GoOrModif();
+        } else if (choix == UserChoice.MODIF) {
+            choosenHero();
+            starGame();
 
-       } else if (Objects.equals(choice, "3")) {
-           System.exit(0);
-       }
-    }
-
-    public void partiLancer(){
-        cece.plateau();
-        String choice = toto.OptionEnJeux();
-        if (Objects.equals(choice, "1")){
-            cece.setPlayerPosition(cece.getPlayerPosition() + lancerDeDee());
-        } else if (Objects.equals(choice,"2")) {
-            System.out.println("persoDuJoueur");
-        }else if (Objects.equals(choice, "3")) {
+        } else if (choix == UserChoice.QUIT) {
+            System.out.println("GameOver");
             System.exit(0);
         }
     }
 
-    private int lancerDeDee(){
-        return (int) (Math.random() * 20 + 1);
+    public void partiLancer() throws PersonnageHorsPlateauException {
+
+        cece.afficheLePlateau();
+        cece.getTableau().get(cece.getPlayerPosition()).interact(persoDuJoueur);//truc pour recuperé l'interacte selon la postion du joueur
+
+        UserChoice choix = toto.OptionEnJeux();
+        if (choix == UserChoice.PLAY) {
+            cece.move(lancerDeDee());
+
+
+        } else if (choix == UserChoice.INFO) {
+            System.out.println(persoDuJoueur);
+
+        } else if (choix == UserChoice.QUIT) {
+            System.out.println("GameOver");
+            System.exit(0);
+        }
+    }
+
+
+    public int lancerDeDee() {
+        int D = (int) (Math.random() * 1 + 1);
+        System.out.println(D);
+        return D;
 
     }
 

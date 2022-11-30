@@ -4,6 +4,6 @@ import Personnages.Equipments.EquipementDefensif;
 
 public class Bouclier extends EquipementDefensif {
     public Bouclier(String type, String name, int lvlDef) {
-        super(type, name, lvlDef);
+        super( name, lvlDef);
     }
 }

@@ -1,5 +1,0 @@
-package Game;
-
-public enum UserChoice {
-    PLAY,  CREATE_CHARACTER, QUIT, CONTINUE, WRONG_ANSWER, GUERRIER, MAGICIEN, MODIF;
-}
