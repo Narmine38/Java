@@ -7,9 +7,10 @@ import fr.cedric.gamelibrary.tictactoe.TicTacToe;
 public class GameFactory {
     public static Game createGame(GameType type) {
         return switch (type) {
-            case GameType.TICTACTOE -> new TicTacToe();
-            case GameType.GOMOKU -> new Gomoku();
-            case GameType.PUISSANCE4 -> new Puissance4();
+            case TICTACTOE -> new TicTacToe();
+            case GOMOKU -> new Gomoku();
+            case PUISSANCE4 -> new Puissance4();
         };
     }
 }
+
